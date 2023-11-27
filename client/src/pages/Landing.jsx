@@ -1,6 +1,6 @@
 import styled  from "styled-components";
 import Wrapper from '../assets/wrappers/LandingPage';
-import main from '../assets/images/gym2.png'
+import main from '../assets/images/gym3.png'
 import { Link } from "react-router-dom";
 import { Logo } from "../components";
 

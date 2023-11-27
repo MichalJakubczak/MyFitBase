@@ -3,8 +3,8 @@ import styled from 'styled-components';
 const Wrapper = styled.button`
   background: transparent;
   border-color: transparent;
-  width: 3.5rem;
-  height: 2rem;
+  width:1;
+  height: 1.5;
   display: grid;
   place-items: center;
   cursor: pointer;
