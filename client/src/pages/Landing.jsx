@@ -14,11 +14,11 @@ const Landing = () => {
       <div className="container page">
         <div className="info">
           <h1>
-                 
+                 Welcome to <br/>
                   your <span>fit</span><span>Base</span>
           </h1>
           <p>
-             Welcome to the world where every step matters and every training brings you closer to your goal.
+             The world where every step matters and every training brings you closer to your goal.
               We are glad that you have joined our community of enthusiasts of exercise and a healthy lifestyle.
               With us you will discover new ways to activate your day and find inspiration for regular activities
               training and learn the secrets of optimizing your nutritional plan.

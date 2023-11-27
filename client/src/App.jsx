@@ -7,6 +7,11 @@ import {
   Login,
   Landing,
   Error,
+  AddExercise,
+  Stats,
+  Profile,
+  Admin,
+  AllExercises,
 } from './pages/index';
 
 
@@ -30,6 +35,28 @@ const router = createBrowserRouter([
     {
       path:'dashboard',
       element:<DashboardLayout />,
+      children:[
+        {
+          index: true,
+          element:<AddExercise/>
+        },
+        {
+          path: 'stats',
+          element: <Stats/>
+        },
+        {
+          path: 'all-exercises',
+          element: <AllExercises/>
+        },
+        {
+          path: 'profile',
+          element: <Profile/>
+        },
+        {
+          path: 'admin',
+          element: <Admin/>
+        },
+      ]
     },
     
     {

@@ -1,4 +1,4 @@
-import logo from '../assets/images/logo6.svg';
+import logo from '../assets/images/logo7.svg';
 
 const Logo = () =>{
     return <img src={logo} alt='myfitbase'
