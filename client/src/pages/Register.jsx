@@ -6,14 +6,15 @@ const Register = () => {
   <Wrapper>
     <form className="form">
       <Logo/>
-      <h4>Register</h4>
-      <FormRow type='text' username='username'/>
+      <h4>Dołącz do FitBase</h4>
+      <FormRow type='text' username='Nazwa użytkownika'/>
       <FormRow type='text' email='email' labelText='email'/>
-      <FormRow type='text' password='password' labelText='password'/>
-      <button type="submit" className="btn btn-block">Create account</button>
+      <FormRow type='text' password='password' labelText='hasło'/>
+      <button type="submit" className="btn btn-block">Utwórz konto</button>
+      
       <p>
-        Already registered? Click here to login<br></br>
-        <Link to='/login' className="member-btn">Login</Link>
+        Masz już konto? Kliknij tutaj aby się zalogować!<br></br>
+        <Link to='/login' className="member-btn">Zaloguj</Link>
       </p>
     </form>
   </Wrapper>

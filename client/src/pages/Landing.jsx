@@ -14,20 +14,20 @@ const Landing = () => {
       <div className="container page">
         <div className="info">
           <h1>
-                 Welcome to <br/>
-                  your <span>fit</span><span>Base</span>
+                 Witaj w aplikacji <br/>
+                  <span>fit</span><span>Base</span>
           </h1>
           <p>
-             The world where every step matters and every training brings you closer to your goal.
-              We are glad that you have joined our community of enthusiasts of exercise and a healthy lifestyle.
-              With us you will discover new ways to activate your day and find inspiration for regular activities
-              training and learn the secrets of optimizing your nutritional plan.
-              We're here to support you every step of the way - no matter what.
-              whether you are a beginner or an advanced fitness enthusiast.
-              Let's move forward to a healthier and happier life!
+              Świat, w którym liczy się każdy krok i każdy trening przybliża Cię do celu.
+              Cieszymy się, że dołączyłeś do naszej społeczności pasjonatów ruchu i zdrowego stylu życia.
+              Z nami odkryjesz nowe sposoby na aktywizację dnia i znajdziesz inspirację do regularnych zajęć
+              szkolenia i poznaj tajniki optymalizacji swojego planu żywieniowego.
+              Jesteśmy tutaj, aby wspierać Cię na każdym kroku – bez względu na wszystko.
+              niezależnie od tego, czy jesteś początkującym, czy zaawansowanym entuzjastą fitnessu.
+              Przejdźmy do zdrowszego i szczęśliwszego życia!
           </p>
-          <Link to='/register' className="btn register-link">Register</Link>
-          <Link to='/login' className="btn">Login</Link>
+          <Link to='/register' className="btn register-link">Rejestracja</Link>
+          <Link to='/login' className="btn">Logowanie</Link>
         </div>
         <img src={main} alt='train' className="img main-img"></img>
       </div>

@@ -8,14 +8,14 @@ const Login = () => {
     <Wrapper>
       <form className="form">
         <Logo/>
-        <h4>login</h4>
+        <h4>Zaloguj się</h4>
         <FormRow type="email" username="email"></FormRow>
-        <FormRow type="password" username="password"></FormRow>
-        <button type="submit" className="btn btn-block">Log in</button>
+        <FormRow type="password" username="hasło"></FormRow>
+        <button type="submit" className="btn btn-block">Zaloguj</button>
         <p>
-        Don't have an account yet? Click here to join<br></br>
+        Nie masz jeszcze konta? Kliknij tutaj aby się zarejestrować<br></br>
         <Link to='/register' className="member-btn">
-          Sing Up
+          Zarejestruj się
         </Link>
         </p>
       </form>
