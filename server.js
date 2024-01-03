@@ -10,6 +10,8 @@ import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
 
 
 
+
+
 if(process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'));
 }
@@ -23,10 +25,6 @@ app.get('/', (req,res)=>{
     res.send('Hello World');
 });
 
-app.post('/', (req, res)=>{
-console.log(req);
-res.json({message: 'data received', data: req.body});
-});
 
 app.use('/api/v1/excersises', excersiseRouter);
 

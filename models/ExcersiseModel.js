@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import { EXERCISE_STATUS } from "../utils/constants.js";
+
 
 const ExcersiseSchema = new mongoose.Schema({
     excersiseName:String,
@@ -7,8 +9,8 @@ const ExcersiseSchema = new mongoose.Schema({
     excersiseDescription:String,
     excersiseType: {
         type: String,
-        enum: ['W domu','Na siłowni','Na zewnątrz','Wszędzie'],
-        default:'Wszędzie',
+        enum: Object.values(EXERCISE_STATUS),
+        default: EXERCISE_STATUS.ALL,
     },
 },
 {timestamps:true}
