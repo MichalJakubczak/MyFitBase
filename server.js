@@ -7,7 +7,7 @@ import morgan from 'morgan';
 import excersiseRouter from './routes/excersiseRouter.js';
 import mongoose from 'mongoose';
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
-
+import authRouter from './routes/authRouter.js';
 
 
 
@@ -27,6 +27,7 @@ app.get('/', (req,res)=>{
 
 
 app.use('/api/v1/excersises', excersiseRouter);
+app.use('/api/v1/auth', authRouter);
 
 app.use('*', (req, res)=>{
     res.status(404).json({message: 'Błąd 404 - nie znaleziono!'})
