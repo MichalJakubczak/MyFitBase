@@ -18,7 +18,7 @@ export const getExcersise = async (req, res)=>{
     const {id} = req.params
     const excercise = await Excersise.findById(id);
 
-    if(!excercise) throw new NotFoundError(`Nie ma ćwiczenia z id ${id}`)
+    if(!excercise) throw new NotFoundError(`Nie ma ćwiczenia z id ${id}`);
 
     res.status(StatusCodes.OK).json({excercise});
  
@@ -29,10 +29,8 @@ export const editExcersise = async (req, res)=>{
 
     const editedExcercise = await Excersise.findByIdAndUpdate(id,req.body, {
         new:true
-    })
-    if(!editedExcercise){
-        return res.status(404).json({message:`Nie ma ćwiczenia z id ${id}`});
-    }
+    });
+    if(!editedExcercise) throw new NotFoundError(`Nie ma ćwiczenia z id ${id}`);
     
     res.status(StatusCodes.OK).json({message:'Ćwiczenie zostało pomyślnie zmienione!',excercise: editedExcercise});
  
@@ -43,9 +41,7 @@ export const deleteExcersise = async (req, res) => {
     const removedExcercise = await Excersise.findByIdAndDelete(id)
 
     const excercise = excercises.find((excercise) => excercise.id === id);
-    if (!removedExcercise) {
-      return res.status(404).json({ message: `Nie ma ćwiczenia o id ${id}` });
-    }
+    if (!removedExcercise) throw new NotFoundError(`Nie ma ćwiczenia z id ${id}`);
     
     res.status(StatusCodes.OK).json({ message:'Ćwiczenie usunięte!', excercise: removedExcercise });
   };
