@@ -43,7 +43,15 @@ export const validateIdParam = withValidationErrors([
 ])
 
 export const validateRegisterInput = withValidationErrors([
-    body('username').notEmpty().withMessage('Użytkownik musi mieć swoją nazwę!'),
+    body('username')
+    .notEmpty()
+    .withMessage('Użytkownik musi mieć swoją nazwę!')
+    .custom(async(username)=>{
+        const user = await User.findOne({username})
+        if(user){
+            throw new BadRequestError('Podana nazwa użytkownika jest zajęta!');
+        }
+    }),
     body('email')
     .notEmpty()
     .withMessage('Użytkownik musi mieć podany adres email!')
@@ -55,8 +63,26 @@ export const validateRegisterInput = withValidationErrors([
             throw new BadRequestError('Email jest już używany!');
         }
     }),
-    body('password').notEmpty().withMessage('Użytkownik musi posiadać hasło!').isLength({min:8}).withMessage('Hasło musi zawierać minimum 8 znaków!')
+    body('password')
+    .notEmpty()
+    .withMessage('Użytkownik musi posiadać hasło!')
+    .isLength({min:8})
+    .withMessage('Hasło musi zawierać minimum 8 znaków!')
 
+]);
+
+export const validateLoginInput = withValidationErrors([
+    
+    body('email')
+    .notEmpty()
+    .withMessage('Użytkownik musi mieć podany adres email!')
+    .isEmail()
+    .withMessage('Niepoprawny adres email!'),
+    
+    body('password')
+    .notEmpty()
+    .withMessage('Użytkownik musi posiadać hasło!')
+    
 ]);
 
 
