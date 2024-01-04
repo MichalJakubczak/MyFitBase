@@ -2,7 +2,8 @@ import {body,param, validationResult} from 'express-validator';
 import { BadRequestError, NotFoundError } from '../errors/customErrors.js';
 import { EXERCISE_STATUS } from '../utils/constants.js';
 import mongoose from 'mongoose';
-import Excersise from '../models/ExcersiseModel.js'
+import Excersise from '../models/ExcersiseModel.js';
+import User from '../models/UserModel.js';
 
 
 const withValidationErrors = (validateValues) =>{
@@ -40,6 +41,45 @@ export const validateIdParam = withValidationErrors([
 
     }),
 ])
+
+export const validateRegisterInput = withValidationErrors([
+    body('username').notEmpty().withMessage('Użytkownik musi mieć swoją nazwę!'),
+    body('email')
+    .notEmpty()
+    .withMessage('Użytkownik musi mieć podany adres email!')
+    .isEmail()
+    .withMessage('Niepoprawny adres email!')
+    .custom(async(email)=>{
+        const user = await User.findOne({email})
+        if(user){
+            throw new BadRequestError('Email jest już używany!');
+        }
+    }),
+    body('password').notEmpty().withMessage('Użytkownik musi posiadać hasło!').isLength({min:8}).withMessage('Hasło musi zawierać minimum 8 znaków!')
+
+]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
