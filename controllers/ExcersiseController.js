@@ -3,6 +3,7 @@ import { StatusCodes } from 'http-status-codes';
 
 
 export const getAllExcersises = async (req, res)=> {
+    console.log(req);
     const excercises = await Excersise.find({});
     res.status(StatusCodes.OK).json({excercises});
 };
