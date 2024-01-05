@@ -3,15 +3,14 @@ import { StatusCodes } from 'http-status-codes';
 
 
 export const getAllExcersises = async (req, res)=> {
-    console.log(req);
-    const excercises = await Excersise.find({});
+    const excercises = await Excersise.find({createdBy:req.user.userId});
     res.status(StatusCodes.OK).json({excercises});
 };
 
 export const createExcersises = async (req, res)=>{
-    
-    const {excersiseName, mainMuscle, addsMuscle, excersiseDescription} = req.body;
-   const excercise =  await Excersise.create({excersiseName, mainMuscle, addsMuscle, excersiseDescription})
+    req.body.createdBy = req.user.userId;
+    //const {excersiseName, mainMuscle, addsMuscle, excersiseDescription} = req.body;
+   const excercise =  await Excersise.create(req.body);
     res.status(StatusCodes.CREATED).json({excercise});
 };
 
@@ -37,7 +36,7 @@ export const editExcersise = async (req, res)=>{
 export const deleteExcersise = async (req, res) => {
     const removedExcercise = await Excersise.findByIdAndDelete(req.params.id)
 
-    const excercise = excercises.find((excercise) => excercise.id === id);
+   // const excercise = Excercise.find((excercise) => excercise.id === id);
     
     
     res.status(StatusCodes.OK).json({ message:'Ćwiczenie usunięte!', excercise: removedExcercise });
