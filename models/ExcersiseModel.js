@@ -12,6 +12,10 @@ const ExcersiseSchema = new mongoose.Schema({
         enum: Object.values(EXERCISE_STATUS),
         default: EXERCISE_STATUS.ALL,
     },
+    createdBy:{
+        type:mongoose.Types.ObjectId,
+        ref:'User',
+    }
 },
 {timestamps:true}
 );
