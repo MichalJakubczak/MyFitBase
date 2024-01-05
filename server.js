@@ -8,6 +8,7 @@ import excersiseRouter from './routes/excersiseRouter.js';
 import mongoose from 'mongoose';
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
 import authRouter from './routes/authRouter.js';
+import userRouter from './routes/userRouter.js';
 import {authenticateUser} from './middleware/authMiddleware.js';
 import cookieParser from 'cookie-parser';
 
@@ -29,6 +30,7 @@ app.get('/', (req,res)=>{
 
 
 app.use('/api/v1/excersises', authenticateUser, excersiseRouter);
+app.use('/api/v1/users', authenticateUser, userRouter);
 app.use('/api/v1/auth', authRouter);
 
 app.use('*', (req, res)=>{
