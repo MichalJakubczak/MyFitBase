@@ -9,7 +9,9 @@ export const getCurrentUser = async (req,res) =>{
 };
 
 export const getApplicationStats = async (req,res) =>{
-    res.status(StatusCodes.OK).json({message:'statystyki aplikacji'});
+    const users = await User.countDocuments();
+    const excercises = await Excersise.countDocuments();
+    res.status(StatusCodes.OK).json({users, excercises});
 };
 
 export const editUser = async (req,res) =>{
