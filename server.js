@@ -28,6 +28,9 @@ app.get('/', (req,res)=>{
     res.send('Hello World');
 });
 
+app.get('/api/v1/test',(req,res)=>{
+    res.json({message:'test route'});
+})
 
 app.use('/api/v1/excersises', authenticateUser, excersiseRouter);
 app.use('/api/v1/users', authenticateUser, userRouter);
