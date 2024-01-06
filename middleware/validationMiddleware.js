@@ -90,7 +90,29 @@ export const validateLoginInput = withValidationErrors([
     
 ]);
 
+export const validateEditUserInput = withValidationErrors([
+    body('username')
+    .notEmpty()
+    .withMessage('Użytkownik musi mieć swoją nazwę!')
+    .custom(async(username, {req})=>{
+        const user = await User.findOne({username})
+        if(user && user._id.toString() !== req.user.userId){
+            throw new BadRequestError('Podana nazwa użytkownika jest zajęta!');
+        }
+    }),
+    body('email')
+    .notEmpty()
+    .withMessage('Użytkownik musi mieć podany adres email!')
+    .isEmail()
+    .withMessage('Niepoprawny adres email!')
+    .custom(async(email, {req})=>{
+        const user = await User.findOne({email})
+        if(user && user._id.toString() !== req.user.userId){
+            throw new BadRequestError('Email jest już używany!');
+        }
+    }),
 
+])
 
 
 
