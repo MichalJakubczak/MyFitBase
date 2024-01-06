@@ -6,15 +6,15 @@ const UserSchema = new mongoose.Schema({
     password: String,
     name: {
         type: String,
-        default: 'imię',
+        default: 'brak informacji',
     },
     lastname: {
         type: String,
-        default: 'nazwisko',
+        default: 'brak informacji',
     },
     location:{
         type: String,
-        default: 'Polska'
+        default: 'brak informacji'
 
     },
     role: {

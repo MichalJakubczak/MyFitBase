@@ -9,8 +9,8 @@ const Login = () => {
       <form className="form">
         <Logo/>
         <h4>Zaloguj się</h4>
-        <FormRow type="email" username="email"></FormRow>
-        <FormRow type="password" username="hasło"></FormRow>
+        <FormRow type="email" name="email" labelText='Email'> </FormRow>
+        <FormRow type="password" name="password" labelText='Hasło'></FormRow>
         <button type="submit" className="btn btn-block">Zaloguj</button>
         <p>
         Nie masz jeszcze konta? Kliknij tutaj aby się zarejestrować<br></br>
