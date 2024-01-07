@@ -153,6 +153,11 @@ h5 {
   max-width: 40em;
 }
 
+.bigtext{
+  margin-bottom: 3rem;
+  max-width: 80em;
+}
+
 small,
 .text-small {
   font-size: var(--small-text);
