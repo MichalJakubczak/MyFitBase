@@ -17,6 +17,10 @@ import {
 import {action as registerAction} from './pages/Register';
 import {action as loginAction} from './pages/Login';
 import { loader as dashboardLoader } from "./pages/DashboardLayout";
+import BMI from "./pages/BMI";
+import Calories from "./pages/Calories";
+import Agenda from "./pages/Agenda";
+import Notes from "./pages/Notes";
 
 export const checkDefaultTheme = ()  =>{
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
@@ -69,6 +73,22 @@ const router = createBrowserRouter([
         {
           path: 'admin',
           element: <Admin/>
+        },
+        {
+          path: 'bmi',
+          element: <BMI/>
+        },
+        {
+          path: 'calories',
+          element: <Calories/>
+        },
+        {
+          path: 'agenda',
+          element: <Agenda/>
+        },
+        {
+          path: 'notes',
+          element: <Notes/>
         },
       ]
     },

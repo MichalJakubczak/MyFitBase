@@ -18,7 +18,7 @@ const AddExercise = () => {
         <FormRow type='text' name='excersiseName' labelText='Nazwa ćwiczenia'/>
         <FormRow type='text' name='mainMuscle' labelText='Główna partia mięśniowa'/>
         <FormRow type='text' name='addsMuscle' labelText='Dodatkowa partia mięśniowa'/>
-        <FormRow type='text' name='excersiseDescription' labelText='Opis ćwiczenia' rows="3"/>
+        <FormRow type='text' name='excersiseDescription' labelText='Opis ćwiczenia'/>
         <button type='submit' className='btn btn-block form-btn' disabled={isSubmitting}>{isSubmitting?'Dodawanie...':'Dodaj'}</button>
       </div>
     </Form>
