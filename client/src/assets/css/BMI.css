@@ -36,7 +36,6 @@ input[type='number'] {
 .result { 
     margin-top: 20px; 
     padding: 10px; 
-    background-color: #f0f0f0; 
     border-radius: 4px; 
 } 
   
@@ -45,6 +44,6 @@ input[type='number'] {
 } 
   
 .bmi-message { 
-    color: #007bff; 
+    color: #38bec9; 
     font-weight: bold; 
 }

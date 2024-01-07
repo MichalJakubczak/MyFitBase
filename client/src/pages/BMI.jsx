@@ -1,4 +1,5 @@
 import React, { useState } from 'react'; 
+import Wrapper from '../assets/wrappers/DashboardFormPage';
 import '../assets/css/BMI.css';
   
 function BMI() { 
@@ -30,7 +31,7 @@ function BMI() {
         } 
     }; 
   
-    return ( 
+    return <Wrapper> 
         <div className="container"> 
             <div className="input-container"> 
                 <label htmlFor="height">Podaj swój wzrost (cm):</label> 
@@ -64,7 +65,8 @@ function BMI() {
                 </div> 
             )} 
         </div> 
-    ); 
+     
+    </Wrapper>
 } 
   
 export default BMI;

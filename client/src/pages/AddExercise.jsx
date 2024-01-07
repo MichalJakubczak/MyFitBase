@@ -23,7 +23,6 @@ const AddExercise = () => {
       </div>
     </Form>
   </Wrapper>
-  return <h1>AddExercise Page</h1>;
 };
 
 export default AddExercise;
