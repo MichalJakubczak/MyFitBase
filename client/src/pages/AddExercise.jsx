@@ -6,6 +6,19 @@ import { Form, useNavigation, redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import customFetch from '../utils/customFetch';
 
+export const action = async ({request}) => {
+  const formData = await request.formData()
+  const data = Object.fromEntries(formData)
+  try {
+    await customFetch.post('/excersises', data)
+    toast.success("Ćwiczenie dodane pomyślnie!")
+    return null;
+  } catch (error) {
+    toast.error(error?.response?.data?.message);
+    return error;
+    
+  }
+}
 
 const AddExercise = () => {
   const {user} = useOutletContext();
@@ -17,8 +30,8 @@ const AddExercise = () => {
       <div className="form-center">
         <FormRow type='text' name='excersiseName' labelText='Nazwa ćwiczenia'/>
         <FormRow type='text' name='mainMuscle' labelText='Główna partia mięśniowa'/>
-        <FormRow type='text' name='addsMuscle' labelText='Dodatkowa partia mięśniowa'/>
-        <FormRow type='text' name='excersiseDescription' labelText='Opis ćwiczenia'/>
+        <FormRow type='text' name='addsMuscle' labelText='Dodatkowa partia mięśniowa' defaultValue='brak'/>
+        <FormRow type='text' name='excersiseDescription' labelText='Opis ćwiczenia' customClass="large-text-input"/>
         <FormRowSelect labelText='Typ ćwiczenia' 
         name='excersiseType' 
         defaultValue={EXERCISE_STATUS.ALL} list={Object.values(EXERCISE_STATUS)}/>

@@ -11,12 +11,15 @@ import {
   Stats,
   Profile,
   Admin,
-  AllExercises,
+  AllExcersises,
 } from './pages/index';
 
 import {action as registerAction} from './pages/Register';
 import {action as loginAction} from './pages/Login';
 import { loader as dashboardLoader } from "./pages/DashboardLayout";
+import { action as addExerciseAction } from "./pages/AddExercise";
+import { loader as allExcersisesLoader } from "./pages/AllExcersises";
+
 import BMI from "./pages/BMI";
 import Calories from "./pages/Calories";
 import Agenda from "./pages/Agenda";
@@ -56,7 +59,8 @@ const router = createBrowserRouter([
       children:[
         {
           index: true,
-          element:<AddExercise/>
+          element:<AddExercise/>,
+          action: addExerciseAction
         },
         {
           path: 'stats',
@@ -64,7 +68,8 @@ const router = createBrowserRouter([
         },
         {
           path: 'all-exercises',
-          element: <AllExercises/>
+          element: <AllExcersises/>,
+          loader: allExcersisesLoader,
         },
         {
           path: 'profile',

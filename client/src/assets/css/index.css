@@ -234,6 +234,11 @@ button:disabled {
   background: var(--green-light);
 }
 /* form */
+.form-input,
+.large-text-input {
+  width: 100vw; 
+  height: 150px; 
+}
 
 .form {
   width: 90vw;
@@ -252,7 +257,7 @@ button:disabled {
   letter-spacing: var(--letter-spacing);
   line-height: 1.5;
 }
-.form-input,
+.form-input
 .form-textarea,
 .form-select {
   width: 100%;

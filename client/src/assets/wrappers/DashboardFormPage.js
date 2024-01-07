@@ -8,6 +8,7 @@ const Wrapper = styled.section`
   .form-title {
     margin-bottom: 2rem;
   }
+
   .form {
     margin: 0;
     border-radius: 0;

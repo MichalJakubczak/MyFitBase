@@ -1,7 +1,7 @@
 export {default as DashboardLayout} from './DashboardLayout';
 export {default as AddExercise} from './AddExercise';
 export {default as Admin} from './Admin';
-export {default as AllExercises} from './AllExercises';
+export {default as AllExcersises} from './AllExcersises';
 export {default as DeleteExercise} from './DeleteExercise';
 export {default as Error} from './Error';
 export {default as HomeLayout} from './HomeLayout';
