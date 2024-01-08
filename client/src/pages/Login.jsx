@@ -10,7 +10,7 @@ export const action = async ({request}) => {
   try {
     await customFetch.post('/auth/login',data)
     toast.success('Pomyślnie zalogowano!')
-    return redirect('/dashboard')
+    return redirect('/dashboard/all-exercises')
   } catch (error) {
     toast.error(error?.response?.data?.message);
     return error;

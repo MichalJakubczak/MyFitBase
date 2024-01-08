@@ -62,19 +62,21 @@ const router = createBrowserRouter([
       loader:dashboardLoader,
       children:[
         {
-          index: true,
-          element:<AddExercise/>,
-          action: addExerciseAction
+          path: 'all-exercises',
+          element: <AllExcersises/>,
+          loader: allExcersisesLoader,
         },
+      
         {
           path: 'stats',
           element: <Stats/>
         },
         {
-          path: 'all-exercises',
-          element: <AllExcersises/>,
-          loader: allExcersisesLoader,
+          index: true,
+          element:<AddExercise/>,
+          action: addExerciseAction
         },
+        
         {
           path: 'profile',
           element: <Profile/>

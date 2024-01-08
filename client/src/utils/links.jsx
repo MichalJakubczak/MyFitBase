@@ -1,4 +1,7 @@
 import React from 'react';
+import { DashboardContext } from '../pages/DashboardLayout';
+import { useState, createContext, useContext } from 'react';
+
 
 import { IoBarChartSharp } from 'react-icons/io5';
 import { MdLineWeight } from "react-icons/md";
@@ -12,7 +15,7 @@ import { FaWeight } from "react-icons/fa";
 
 const links = [
   { text: 'Ćwiczenia', path: 'all-exercises', icon: <MdLineWeight /> },
-  { text: 'Dodaj ćwiczenie', path: '.', icon: <GiWeightLiftingUp /> },
+  { text: 'Dodaj ćwiczenie', path: '.', icon: <GiWeightLiftingUp />, role:'admin' },
   { text: 'statystyki', path: 'stats', icon: <IoBarChartSharp /> },
   { text: 'profil', path: 'profile', icon: <ImProfile /> },
   { text: 'admin', path: 'admin', icon: <MdAdminPanelSettings /> },
