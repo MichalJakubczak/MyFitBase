@@ -9,6 +9,7 @@ import mongoose from 'mongoose';
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
 import authRouter from './routes/authRouter.js';
 import userRouter from './routes/userRouter.js';
+import notesRouter from './routes/noteRouter.js';
 import {authenticateUser} from './middleware/authMiddleware.js';
 import cookieParser from 'cookie-parser';
 
@@ -31,6 +32,8 @@ app.get('/', (req,res)=>{
 app.get('/api/v1/test',(req,res)=>{
     res.json({message:'test route'});
 })
+
+app.use('/api/v1/notes', authenticateUser, notesRouter);
 
 app.use('/api/v1/excersises', authenticateUser, excersiseRouter);
 app.use('/api/v1/users', authenticateUser, userRouter);

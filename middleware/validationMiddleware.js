@@ -4,6 +4,7 @@ import { EXERCISE_STATUS } from '../utils/constants.js';
 import mongoose from 'mongoose';
 import Excersise from '../models/ExcersiseModel.js';
 import User from '../models/UserModel.js';
+import Note from '../models/NoteModel.js';
 
 
 const withValidationErrors = (validateValues) =>{
@@ -31,7 +32,9 @@ export const validateExerciseInput = withValidationErrors([
     body('excersiseDescription').notEmpty().withMessage('Opis ćwiczenia jest wymagany!'),
     body('excersiseType').isIn(Object.values(EXERCISE_STATUS)).withMessage('Brak typu ćwiczenia!')
 ]);
-
+export const validateNotesInput = withValidationErrors([
+    body('content').notEmpty().withMessage('Notatka musi mieć jakąś treść!'),
+]);
 
 export const validateIdParam = withValidationErrors([
     param('id')
@@ -45,6 +48,22 @@ export const validateIdParam = withValidationErrors([
     const isOwner = req.user.userId === excercise.createdBy.toString();
     if(!isAdmin && !isOwner) throw new UnauthorizedError('Nieuprawnione żądanie');
     }),
+    
+]);
+
+export const validateIdParamNote = withValidationErrors([
+    param('id')
+    .custom(async(value,{req})=>{
+        const isValidId = mongoose.Types.ObjectId.isValid(value);
+        if(!isValidId) throw new BadRequestError('invalid MondoDB id')
+        const note = await Note.findById(value);
+
+    if(!note) throw new NotFoundError(`Nie ma notatki z id ${value}`);
+    const isAdmin = req.user.role ==='admin';
+    const isOwner = req.user.userId === note.createdBy.toString();
+    if(!isAdmin && !isOwner) throw new UnauthorizedError('Nieuprawnione żądanie');
+    }),
+    
 ])
 
 export const validateRegisterInput = withValidationErrors([
