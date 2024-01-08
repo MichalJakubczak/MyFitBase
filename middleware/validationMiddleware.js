@@ -43,7 +43,7 @@ export const validateIdParam = withValidationErrors([
     if(!excercise) throw new NotFoundError(`Nie ma ćwiczenia z id ${value}`);
     const isAdmin = req.user.role ==='admin'
     const isOwner = req.user.userId === excercise.createdBy.toString();
-    if(!usAdmin && !isOwner) throw new UnauthorizedError('Nieuprawnione żądanie');
+    if(!isAdmin && !isOwner) throw new UnauthorizedError('Nieuprawnione żądanie');
     }),
 ])
 

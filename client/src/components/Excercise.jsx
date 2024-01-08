@@ -26,7 +26,7 @@ const Excercise = ({
           <ExcerciseInfo icon={FaCalendarAlt} text={"Gdzie najlepiej wykonywać ćwiczenie: " +excersiseType}></ExcerciseInfo>
         </div>
         <footer className='actions'>
-          <Link className='btn edit-btn'>Edytuj</Link>
+          <Link to='/dashboard/edit-job' className='btn edit-btn'>Edytuj</Link>
           <Form>
             <button type="submit" className='btn delete-btn'>
               Usuń

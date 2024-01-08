@@ -12,6 +12,7 @@ import {
   Profile,
   Admin,
   AllExcersises,
+  EditExercise
 } from './pages/index';
 
 import {action as registerAction} from './pages/Register';
@@ -94,6 +95,10 @@ const router = createBrowserRouter([
         {
           path: 'notes',
           element: <Notes/>
+        },
+        {
+          path: 'edit-job',
+          element: <EditExercise/>
         },
       ]
     },
