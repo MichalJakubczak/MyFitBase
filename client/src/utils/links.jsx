@@ -16,7 +16,7 @@ const links = [
   { text: 'statystyki', path: 'stats', icon: <IoBarChartSharp /> },
   { text: 'profil', path: 'profile', icon: <ImProfile /> },
   { text: 'admin', path: 'admin', icon: <MdAdminPanelSettings /> },
-  { text: 'BMI', path: 'bmi', icon: < FaWeight/> },
+  { text: 'BMI & BMR', path: 'bmi', icon: < FaWeight/> },
   { text: 'Kalkulator kalorii', path: 'calories', icon: <FaCalculator /> },
   { text: 'Harmonogram', path: 'agenda', icon: <FaRegCalendarCheck /> },
   { text: 'Notatnik', path: 'notes', icon: <CgNotes /> },

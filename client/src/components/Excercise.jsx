@@ -6,11 +6,16 @@ import ExcerciseInfo from './ExcerciseInfo';
 import day from 'dayjs';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 day.extend(advancedFormat);
+import { DashboardContext } from '../pages/DashboardLayout';
+import { useState, createContext, useContext } from 'react';
+
 
 const Excercise = ({
     _id,excersiseName,mainMuscle,addsMuscle,excersiseDescription,excersiseType
 }) => {
-  return (
+  const { user } = useContext(DashboardContext); 
+  const canEdit = user && user.role !== 'user';
+  return  (
     <Wrapper>
       <header>
         <div className="main-icon">{excersiseType.charAt(0)}</div>
@@ -25,8 +30,10 @@ const Excercise = ({
           <ExcerciseInfo icon={FaBriefcase} text={excersiseDescription}></ExcerciseInfo>
           <ExcerciseInfo icon={FaCalendarAlt} text={"Gdzie najlepiej wykonywać ćwiczenie: " +excersiseType}></ExcerciseInfo>
         </div>
+        {canEdit &&(
         <footer className='actions'>
-          <Link to='/dashboard/edit-job' className='btn edit-btn'>Edytuj</Link>
+          
+          <Link to={`../edit-exercise/${_id}`} className='btn edit-btn'>Edytuj</Link>
           <Form>
             <button type="submit" className='btn delete-btn'>
               Usuń
@@ -34,9 +41,12 @@ const Excercise = ({
           </Form>
 
         </footer>
+      
+      )}
       </div>
     </Wrapper>
-  )
-}
+    
+  );
+};
 
 export default Excercise;

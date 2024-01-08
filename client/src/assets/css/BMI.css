@@ -47,3 +47,7 @@ input[type='number'] {
     color: #38bec9; 
     font-weight: bold; 
 }
+
+.bmr-value { 
+    font-weight: bold; 
+}

@@ -9,7 +9,7 @@ import { checkDefaultTheme } from '../App';
 import customFetch from '../utils/customFetch';
 
 import { toast } from 'react-toastify';
-const DashboardContext = createContext();
+export const DashboardContext = createContext();
 
 export const loader = async() =>{
   try {

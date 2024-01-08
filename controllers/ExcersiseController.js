@@ -3,7 +3,7 @@ import { StatusCodes } from 'http-status-codes';
 
 
 export const getAllExcersises = async (req, res)=> {
-    const excercises = await Excersise.find({createdBy:req.user.userId});
+    const excercises = await Excersise.find();
     res.status(StatusCodes.OK).json({excercises});
 };
 

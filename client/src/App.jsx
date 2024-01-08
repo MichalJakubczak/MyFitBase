@@ -20,6 +20,8 @@ import {action as loginAction} from './pages/Login';
 import { loader as dashboardLoader } from "./pages/DashboardLayout";
 import { action as addExerciseAction } from "./pages/AddExercise";
 import { loader as allExcersisesLoader } from "./pages/AllExcersises";
+import { action as editExerciseAction} from "./pages/EditExercise";
+import { loader as editExerciseLoader } from "./pages/EditExercise";
 
 import BMI from "./pages/BMI";
 import Calories from "./pages/Calories";
@@ -97,8 +99,10 @@ const router = createBrowserRouter([
           element: <Notes/>
         },
         {
-          path: 'edit-job',
-          element: <EditExercise/>
+          path: 'edit-exercise/:id',
+          element: <EditExercise/>,
+          loader: editExerciseLoader,
+          action: editExerciseAction
         },
       ]
     },
