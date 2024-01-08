@@ -22,6 +22,7 @@ import { action as addExerciseAction } from "./pages/AddExercise";
 import { loader as allExcersisesLoader } from "./pages/AllExcersises";
 import { action as editExerciseAction} from "./pages/EditExercise";
 import { loader as editExerciseLoader } from "./pages/EditExercise";
+import { action as deleteExerciseAction} from "./pages/DeleteExercise";
 
 import BMI from "./pages/BMI";
 import Calories from "./pages/Calories";
@@ -104,6 +105,7 @@ const router = createBrowserRouter([
           loader: editExerciseLoader,
           action: editExerciseAction
         },
+        {path: 'delete-exercise/:id', action: deleteExerciseAction},
       ]
     },
     

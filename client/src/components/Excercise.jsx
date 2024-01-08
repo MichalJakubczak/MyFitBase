@@ -34,7 +34,7 @@ const Excercise = ({
         <footer className='actions'>
           
           <Link to={`../edit-exercise/${_id}`} className='btn edit-btn'>Edytuj</Link>
-          <Form>
+          <Form method='post' action={`../delete-exercise/${_id}`}>
             <button type="submit" className='btn delete-btn'>
               Usuń
             </button>
