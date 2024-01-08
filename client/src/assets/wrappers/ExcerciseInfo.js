@@ -13,7 +13,7 @@ const Wrapper = styled.div`
     }
   }
   .job-text {
-    text-transform: capitalize;
+
     letter-spacing: var(--letter-spacing);
   }
 `;
