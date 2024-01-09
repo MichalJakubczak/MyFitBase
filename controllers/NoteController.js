@@ -2,11 +2,18 @@ import Note from '../models/NoteModel.js';
 import { StatusCodes } from 'http-status-codes';
 
 
-export const getNotes = async (req, res)=> {
+export const getAllNotes = async (req, res)=> {
     const notes = await Note.find({createdBy:req.user.userId});
     res.status(StatusCodes.OK).json({notes});
 };
 
+export const getNotes = async (req, res)=>{
+    const note = await Note.findById(req.params.id);
+
+    
+    res.status(StatusCodes.OK).json({note});
+ 
+};
 export const createNote = async (req, res)=>{
     req.body.createdBy = req.user.userId;
     //const {excersiseName, mainMuscle, addsMuscle, excersiseDescription} = req.body;

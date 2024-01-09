@@ -1,41 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import customFetch from '../utils/customFetch';
 import { toast } from 'react-toastify';
+import { NotesContainer } from '../components';
+import customFetch from '../utils/customFetch';
+import { useLoaderData } from 'react-router-dom';
+import { useContext, createContext } from 'react';
 
+export const loader = async ({ request }) => {
+  try {
+    const { data } = await customFetch.get('/notes');
+    return {data};
+  } catch (error) {
+    toast.error(error?.response?.data?.msg);
+    return error;
+  }
+};
+const AllNotesContext = createContext();
 const AllNotes = () => {
-    const [notes, setNotes] = useState([]);
-  
-    useEffect(() => {
-      customFetch.get('/notes')
-        .then(response => {
-          if (response.data) {
-            setNotes(response.data);
-          }
-        })
-        .catch(error => {
-          console.error('Błąd podczas ładowania notatek:', error);
-          toast.error('Nie udało się załadować notatek.');
-        });
-    }, []);
-  
-    return (
-      <div>
-        <h2>Notatki</h2>
-        <ul>
-          {notes.length === 0 ? (
-            <li>Brak notatek do wyświetlenia...</li>
-          ) : (
-            notes.map(note => (
-              <li key={note.id}>
-                <h3>{note.title}</h3>
-                <p>{note.content}</p>
-                {/* Dodatkowe akcje lub elementy dla każdej notatki */}
-              </li>
-            ))
-          )}
-        </ul>
-      </div>
-    );
-  };
-  
-  export default AllNotes;
+  const {data} = useLoaderData();
+  return (
+    <AllNotesContext.Provider value={{data}}>
+    <NotesContainer/>
+    </AllNotesContext.Provider>
+  );
+};
+
+export const useAllNotesContext = () => useContext(AllNotesContext);
+export default AllNotes;

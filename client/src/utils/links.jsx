@@ -16,13 +16,14 @@ import { FaWeight } from "react-icons/fa";
 const links = [
   { text: 'Ćwiczenia', path: 'all-exercises', icon: <MdLineWeight /> },
   { text: 'Dodaj ćwiczenie', path: '.', icon: <GiWeightLiftingUp />, role:'admin' },
-  { text: 'statystyki', path: 'stats', icon: <IoBarChartSharp /> },
-  { text: 'profil', path: 'profile', icon: <ImProfile /> },
-  { text: 'admin', path: 'admin', icon: <MdAdminPanelSettings /> },
+ // { text: 'statystyki', path: 'stats', icon: <IoBarChartSharp /> },
+  //{ text: 'profil', path: 'profile', icon: <ImProfile /> },
+  
   { text: 'BMI & BMR', path: 'bmi', icon: < FaWeight/> },
   { text: 'Kalkulator kalorii', path: 'calories', icon: <FaCalculator /> },
   { text: 'Harmonogram', path: 'agenda', icon: <FaRegCalendarCheck /> },
-  { text: 'Notatnik', path: 'notes', icon: <CgNotes /> },
+  { text: 'Dodaj notatke', path: 'add-notes', icon: <CgNotes /> },
+  { text: 'Notatki', path: 'all-notes', icon: <CgNotes /> },
 ];
 
 export default links;

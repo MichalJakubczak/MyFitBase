@@ -13,7 +13,9 @@ import {
   Admin,
   AllExcersises,
   EditExercise,
-  AllNotes
+  AddNote,
+  AllNotes,
+  EditNote
 } from './pages/index';
 
 import {action as registerAction} from './pages/Register';
@@ -24,11 +26,13 @@ import { loader as allExcersisesLoader } from "./pages/AllExcersises";
 import { action as editExerciseAction} from "./pages/EditExercise";
 import { loader as editExerciseLoader } from "./pages/EditExercise";
 import { action as deleteExerciseAction} from "./pages/DeleteExercise";
+import { action as addNoteAction} from "./pages/AddNote";
+import { loader as allNotesLoader } from "./pages/AllNotes";
 
 import BMI from "./pages/BMI";
 import Calories from "./pages/Calories";
 import Agenda from "./pages/Agenda";
-import Notes from "./pages/Notes";
+
 
 export const checkDefaultTheme = ()  =>{
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
@@ -99,12 +103,18 @@ const router = createBrowserRouter([
           element: <Agenda/>
         },
         {
-          path: 'notes',
-          element: <Notes/>
+          path: 'add-notes',
+          element: <AddNote/>,
+          action: addNoteAction,
         },
         {
           path: 'all-notes',
-          element: <AllNotes/>
+          element: <AllNotes/>,
+          loader: allNotesLoader,
+        },
+        {
+          path: 'edit-note/:id',
+          element: <EditNote/>,
         },
         {
           path: 'edit-exercise/:id',

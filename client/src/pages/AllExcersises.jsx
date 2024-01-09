@@ -22,7 +22,6 @@ const AllExcersises = () => {
 
   return (
     <AllExcersisesContext.Provider value={{data}}>
-      <SearchContainer />
       <ExcersisesContainer />
       </AllExcersisesContext.Provider>
   );
