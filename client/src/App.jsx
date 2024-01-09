@@ -12,7 +12,8 @@ import {
   Profile,
   Admin,
   AllExcersises,
-  EditExercise
+  EditExercise,
+  AllNotes
 } from './pages/index';
 
 import {action as registerAction} from './pages/Register';
@@ -100,6 +101,10 @@ const router = createBrowserRouter([
         {
           path: 'notes',
           element: <Notes/>
+        },
+        {
+          path: 'all-notes',
+          element: <AllNotes/>
         },
         {
           path: 'edit-exercise/:id',

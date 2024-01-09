@@ -1,0 +1,39 @@
+.note-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .note-form input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .note-form textarea {
+    width: 80%;
+    height: 200px; /* Duże pole tekstowe */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical; /* Pozwala użytkownikowi dostosować wysokość pola */
+  }
+  
+  .note-form button {
+    padding:5px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .note-form button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -16,7 +16,7 @@ export const loader = async ({}) =>{
   
 };
 
-const AllExcersisesContext = createContext()
+const AllExcersisesContext = createContext();
 const AllExcersises = () => {
   const { data } = useLoaderData();
 
