@@ -29,11 +29,13 @@ const AddNote = () => {
     return (
         <Wrapper>
           <Form method='post' className='form'>
-            <h4 className='form-title'>Dodaj notatke</h4>
+            <h4 className='form-title'>Dodaj wydarzenie</h4>
             <div className='form-center'>
-              <FormRow type='text' name='title' labelText='Nazwa notatki' />
-              <FormRow type='text' name='content' labelText='Treść notatki' />
-    
+              <FormRow type='text' name='title' labelText='Tytuł' />
+              <FormRow type='text' name='event' labelText='wydarzenie' />
+              <FormRow type='text' name='startdate' labelText='początek wydarzenia' />
+              <FormRow type='text' name='enddate' labelText='koniec wydarzenia' />
+              <FormRow type='text' name='content' labelText='prywatna notatka' defaultValue="brak" />
               <button
                 type='submit'
                 className='btn btn-block form-btn '

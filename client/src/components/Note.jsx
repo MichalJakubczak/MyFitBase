@@ -11,7 +11,7 @@ import { useState, createContext, useContext } from 'react';
 
 
 const Note = ({
-    _id,title,content
+    _id,title,content, event, startdate,enddate
 }) => {
   const { user } = useContext(DashboardContext); 
   return  (
@@ -23,13 +23,16 @@ const Note = ({
       </header>
       <div className='content'>
         <div className="content-center">
-          <NoteInfo icon={FaLocationArrow} text={content}></NoteInfo>
+          <NoteInfo icon={FaLocationArrow} text={"notatka/uwagi: "+content}></NoteInfo>
+          <NoteInfo icon={FaLocationArrow} text={"wydarzenie: "+event}></NoteInfo>
+          <NoteInfo icon={FaLocationArrow} text={"początek wydarzenia: "+startdate}></NoteInfo>
+          <NoteInfo icon={FaLocationArrow} text={"koniec wydarzenia: "+enddate}></NoteInfo>
         </div>
         
         <footer className='actions'>
           
-          <Link to={`../edit-exercise/${_id}`} className='btn edit-btn'>Edytuj</Link>
-          <Form method='post' action={`../delete-exercise/${_id}`}>
+          <Link to={`../edit-note/${_id}`} className='btn edit-btn'>Edytuj</Link>
+          <Form method='post' action={`../delete-note/${_id}`}>
             <button type="submit" className='btn delete-btn'>
               Usuń
             </button>

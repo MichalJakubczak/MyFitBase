@@ -21,9 +21,9 @@ const links = [
   
   { text: 'BMI & BMR', path: 'bmi', icon: < FaWeight/> },
   { text: 'Kalkulator kalorii', path: 'calories', icon: <FaCalculator /> },
-  { text: 'Harmonogram', path: 'agenda', icon: <FaRegCalendarCheck /> },
-  { text: 'Dodaj notatke', path: 'add-notes', icon: <CgNotes /> },
-  { text: 'Notatki', path: 'all-notes', icon: <CgNotes /> },
+  //{ text: 'Harmonogram', path: 'agenda', icon: <FaRegCalendarCheck /> },
+  { text: 'Dodaj wydarzenie', path: 'add-notes', icon: <CgNotes /> },
+  { text: 'Harmonogram wydarzeń', path: 'all-notes', icon: <FaRegCalendarCheck /> },
 ];
 
 export default links;

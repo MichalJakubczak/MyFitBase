@@ -10,7 +10,15 @@ const NoteSchema = new mongoose.Schema({
         type:String,
         require:true
     },
-
+    event:{
+        type:String,
+    },
+    startdate:{
+        type:String,
+    },
+    enddate:{
+        type:String,
+    },
     createdBy:{
         type:mongoose.Types.ObjectId,
         ref:'User'
