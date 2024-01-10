@@ -18,7 +18,7 @@ const links = [
   { text: 'Dodaj ćwiczenie', path: '.', icon: <GiWeightLiftingUp />, role:'admin' },
  // { text: 'statystyki', path: 'stats', icon: <IoBarChartSharp /> },
   { text: 'profil', path: 'profile', icon: <ImProfile /> },
-  { text: 'Użytkownicy', path: 'admin', icon: <MdAdminPanelSettings />, role:'admin' },
+  { text: 'Użytkownicy', path: 'all-users', icon: <MdAdminPanelSettings />, role:'admin' },
   { text: 'BMI & BMR', path: 'bmi', icon: < FaWeight/> },
   { text: 'Kalkulator kalorii', path: 'calories', icon: <FaCalculator /> },
   //{ text: 'Harmonogram', path: 'agenda', icon: <FaRegCalendarCheck /> },

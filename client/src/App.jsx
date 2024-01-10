@@ -15,7 +15,9 @@ import {
   EditExercise,
   AddNote,
   AllNotes,
-  EditNote
+  EditNote,
+  AllUsers,
+  EditUser
 } from './pages/index';
 
 import {action as registerAction} from './pages/Register';
@@ -32,6 +34,11 @@ import { action as editNoteAction} from "./pages/EditNote";
 import { loader as editNoteLoader } from "./pages/EditNote";
 import { action as deleteNoteAction} from "./pages/DeleteNote";
 import { action as profileAction} from "./pages/Profile";
+import { loader as allUsersLoader } from "./pages/AllUsers";
+import { action as editUserAction} from "./pages/EditUser";
+import { loader as editUserLoader } from "./pages/EditUser";
+import { action as deleteUserAction} from "./pages/DeleteUser";
+
 
 import BMI from "./pages/BMI";
 import Calories from "./pages/Calories";
@@ -124,6 +131,17 @@ const router = createBrowserRouter([
           action: editNoteAction
         },
         {
+          path: 'all-users',
+          element: <AllUsers/>,
+          loader: allUsersLoader,
+        },
+        {
+          path: 'edit-user/:id',
+          element: <EditUser/>,
+          loader: editUserLoader,
+          action: editUserAction
+        },
+        {
           path: 'edit-exercise/:id',
           element: <EditExercise/>,
           loader: editExerciseLoader,
@@ -131,6 +149,7 @@ const router = createBrowserRouter([
         },
         {path: 'delete-exercise/:id', action: deleteExerciseAction},
         {path: 'delete-note/:id', action: deleteNoteAction},
+        {path: 'delete-user/:id', action: deleteUserAction},
       ]
     },
     

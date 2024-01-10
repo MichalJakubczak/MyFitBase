@@ -14,3 +14,5 @@ export {default as Stats} from './Stats';
 export {default as AddNote} from './AddNote';
 export {default as AllNotes} from './AllNotes';
 export {default as EditNote} from './EditNote';
+export {default as AllUsers} from './AllUsers';
+export {default as EditUser} from './EditUser';

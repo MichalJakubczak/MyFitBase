@@ -7,4 +7,5 @@ export {default as FormRowSelect} from './FormRowSelect';
 export {default as ExcersisesContainer} from './ExcersisesContainer';
 export {default as SearchContainer} from './SearchContainer';
 export {default as NotesContainer} from './NotesContainer';
+export {default as UsersContainer} from './UsersContainer';
 
