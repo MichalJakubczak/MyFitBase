@@ -17,7 +17,7 @@ const links = [
   { text: 'Ćwiczenia', path: 'all-exercises', icon: <MdLineWeight /> },
   { text: 'Dodaj ćwiczenie', path: '.', icon: <GiWeightLiftingUp />, role:'admin' },
  // { text: 'statystyki', path: 'stats', icon: <IoBarChartSharp /> },
-  //{ text: 'profil', path: 'profile', icon: <ImProfile /> },
+  { text: 'profil', path: 'profile', icon: <ImProfile /> },
   
   { text: 'BMI & BMR', path: 'bmi', icon: < FaWeight/> },
   { text: 'Kalkulator kalorii', path: 'calories', icon: <FaCalculator /> },

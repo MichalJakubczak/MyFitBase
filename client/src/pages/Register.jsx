@@ -41,9 +41,9 @@ const Register = () => {
     <Form method='post' className="form">
       <Logo/>
       <h4>Dołącz do FitBase</h4>
-      <FormRow type='text' name='username' labelText='Nazwa użytkownika' defaultValue='Deadlyver'/>
-      <FormRow type='email' name='email' labelText='email' defaultValue='fitbase@gmail.com'/>
-      <FormRow type='password' name='password' labelText='hasło' defaultValue='secret123'/>
+      <FormRow type='text' name='username' labelText='Nazwa użytkownika' />
+      <FormRow type='email' name='email' labelText='email' />
+      <FormRow type='password' name='password' labelText='hasło' />
       <button type="submit" className="btn btn-block" disabled ={isSubmitting} >{isSubmitting ? 'Rejestracja...':'Zarejestruj'}</button>
       
       <p>

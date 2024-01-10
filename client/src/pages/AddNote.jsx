@@ -32,9 +32,9 @@ const AddNote = () => {
             <h4 className='form-title'>Dodaj wydarzenie</h4>
             <div className='form-center'>
               <FormRow type='text' name='title' labelText='Tytuł' />
-              <FormRow type='text' name='event' labelText='wydarzenie' />
-              <FormRow type='text' name='startdate' labelText='początek wydarzenia' />
-              <FormRow type='text' name='enddate' labelText='koniec wydarzenia' />
+              <FormRow type='text' name='event' labelText='wydarzenie' defaultValue="-" />
+              <FormRow type='text' name='startdate' labelText='początek wydarzenia' defaultValue="-" />
+              <FormRow type='text' name='enddate' labelText='koniec wydarzenia' defaultValue="-" />
               <FormRow type='text' name='content' labelText='prywatna notatka' defaultValue="brak" />
               <button
                 type='submit'

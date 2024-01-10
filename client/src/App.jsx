@@ -31,6 +31,7 @@ import { loader as allNotesLoader } from "./pages/AllNotes";
 import { action as editNoteAction} from "./pages/EditNote";
 import { loader as editNoteLoader } from "./pages/EditNote";
 import { action as deleteNoteAction} from "./pages/DeleteNote";
+import { action as profileAction} from "./pages/Profile";
 
 import BMI from "./pages/BMI";
 import Calories from "./pages/Calories";
@@ -87,7 +88,8 @@ const router = createBrowserRouter([
         
         {
           path: 'profile',
-          element: <Profile/>
+          element: <Profile/>,
+          action: profileAction,
         },
         {
           path: 'admin',
