@@ -12,11 +12,19 @@ import userRouter from './routes/userRouter.js';
 import notesRouter from './routes/noteRouter.js';
 import {authenticateUser} from './middleware/authMiddleware.js';
 import cookieParser from 'cookie-parser';
+import cloudinary from 'cloudinary';
+
 
 import {dirname} from 'path';
 import  {fileURLToPath} from 'url';
 import path from 'path';
 
+
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.CLOUD_API_KEY,
+    api_secret: process.env.CLOUD_API_SECRET,
+  });
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 if(process.env.NODE_ENV === 'development'){

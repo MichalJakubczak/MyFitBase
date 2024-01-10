@@ -14,7 +14,7 @@ export const action = async ({request}) => {
     return null;
   }
   try {
-    await customFetch.patch('/users/update-user', formData)
+    await customFetch.patch('/users/edit-user', formData)
     toast.success('Profil pomyślnie zaktualizowany!')
   } catch (error) {
     toast.error(error?.response?.data?.message);
@@ -34,18 +34,6 @@ const Profile = () => {
         <h4 className='form-title'>Profil</h4>
 
         <div className='form-center'>
-          <div className='form-row'>
-            <label htmlFor='image' className='form-label'>
-              Wybierz zdjęcie (max 0.5 MB):
-            </label>
-            <input
-              type='file'
-              id='avatar'
-              name='avatar'
-              className='form-input'
-              accept='image/*'
-            />
-          </div>
           <FormRow type='text' name='username' defaultValue={username} labelText='Nazwa użytkownika' />
           <FormRow
             type='email'
